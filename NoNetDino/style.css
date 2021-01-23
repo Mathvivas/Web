@@ -22,6 +22,14 @@ body {
   text-align: center;
   color: black;
   margin-top: 50px;
+  font-family: "Press Start 2P", "Arial";
+}
+
+.score {
+  text-align: center;
+  color: black;
+  margin-top: 150px;
+  font-family: "Press Start 2P", "Arial";
 }
 
 @keyframes slideright {

@@ -2,6 +2,7 @@ const dino = document.querySelector('.dino');
 const background = document.querySelector('.bg');
 let isJumping = false;
 let position = 0;
+let score = 0;
 
 function handleKeyUp(event) {
   if (event.code ===  'Space') {
@@ -50,11 +51,13 @@ function createTree() {
     if (treePosition < -60) {
       clearInterval(leftInterval);
       background.removeChild(tree);
+      score++;
 
     } else if (treePosition > 0 && treePosition < 60 && position < 60) {
       // Game Over
       clearInterval(leftInterval);
-      document.body.innerHTML = '<h1 class="game-over">Fim de Jogo</h1>';
+      document.body.innerHTML = '<h1 class="game-over">GAME OVER</h1>';
+      document.body.innerHTML = '<h2 class="score">SCORE: ' + score + '</h2>';
 
     } else {
       treePosition -= 10;
