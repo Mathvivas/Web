@@ -58,7 +58,6 @@ function createTree() {
       clearInterval(leftInterval);
       document.body.innerHTML = '<h1 class="game-over">GAME OVER</h1> <h2 class="score">SCORE: ' + score + '</h2>';
 
-
     } else {
       treePosition -= 10;
       tree.style.left = treePosition + 'px';
@@ -69,4 +68,4 @@ function createTree() {
 }
 
 createTree();
-document.addEventListener('keyup', handleKeyUp);
+document.addEventListener('keydown', handleKeyUp);
