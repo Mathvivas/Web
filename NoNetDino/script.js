@@ -56,8 +56,8 @@ function createTree() {
     } else if (treePosition > 0 && treePosition < 60 && position < 60) {
       // Game Over
       clearInterval(leftInterval);
-      document.body.innerHTML = '<h1 class="game-over">GAME OVER</h1>';
-      document.body.innerHTML = '<h2 class="score">SCORE: ' + score + '</h2>';
+      document.body.innerHTML = '<h1 class="game-over">GAME OVER</h1> <h2 class="score">SCORE: ' + score + '</h2>';
+
 
     } else {
       treePosition -= 10;
