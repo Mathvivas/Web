@@ -1,3 +1,7 @@
+body {
+  font: 26px Source Code Pro, sans-serif;
+}
+
 .navbar {
   background-color: #f2ff00;
 }
@@ -20,5 +24,13 @@
 }
 
 .parceiros {
-  background-color: #04ff96;
+  background-color: #00c9ff;
+}
+
+.servicos {
+  background-color: #009cff;
+}
+
+.bg-footer {
+  background-color: gray;
 }
