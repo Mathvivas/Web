@@ -60,8 +60,23 @@ body {
     min-height: 19rem;
 }
 
+.instagram {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 0;
+}
+
+.insta-name {
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px #ff00b9;
+}
+
 .instagram-logo {
     height: 3rem;
+    padding-right: 5px;
 }
 
 .profile-photo {
