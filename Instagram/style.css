@@ -4,7 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Charm', cursive;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 body {
@@ -20,13 +20,20 @@ body {
 .instagram-wrapper {
     display: flex;
     align-items: center;
+    justify-content: start;
+    width: 60%;
+    height: 100vh;
+}
+
+.instagram-phone {
+    display: flex;
+    align-items: center;
     justify-content: center;
     width: 50%;
 }
 
-.instaram-phone img {
+.instagram-phone img {
     height: 50rem;
-    background-color: white;
 }
 
 .instagram-continue {
@@ -69,7 +76,7 @@ body {
     height: 6rem;
 }
 
-.instaram-login {
+.instagram-login {
     background-color: #0095f6;
     color: #ffffff;
     padding: 8px;
