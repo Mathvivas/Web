@@ -26,6 +26,7 @@ body {
 
 .instaram-phone img {
     height: 50rem;
+    background-color: white;
 }
 
 .instagram-continue {
@@ -106,7 +107,45 @@ body {
 }
 
 .app-download {
-    height: 3rem;
+    height: 10rem;
     width: 10rem;
     background-size: cover;
+}
+
+.app-download:nth-child(1) {
+    background-image: url('./images/apple.png');
+}
+
+.app-download:nth-child(2) {
+    background-image: url('./images/googleplay.png');
+}
+
+/*  Media Queries  */
+
+@media (max-width: 1024px) {
+    .instagram-wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        background-color: #ffffff;
+    }
+
+    .instagram-wrapper {
+        width: 90%;
+    }
+
+    .instagram-phone {
+        display: none;
+    }
+
+    .instagram-continue {
+        width: 100%;
+    }
+
+    .group {
+        border: 1px solid transparent;
+    }
 }
