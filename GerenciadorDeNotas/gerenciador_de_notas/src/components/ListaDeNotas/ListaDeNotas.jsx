@@ -6,7 +6,7 @@ export class ListaDeNotas extends Component {
     render() {
         return (    // dentro de chaves -> código javascript
           <ul className="lista-notas">
-              { Array.of("Trabalho", "Trabalho", "Estudos").map((categoria, index) => {
+              { this.props.notas.map((nota, index) => {
                 return (
                   <li className="lista-notas_item" key={ index }>
                     <CardNota />
