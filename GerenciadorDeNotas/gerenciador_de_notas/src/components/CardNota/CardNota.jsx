@@ -1,5 +1,5 @@
 import React, { Component } from 'react';   // imrc
-import "./style.css"
+import "./style.css";
 
 class CardNota extends Component {      // cc TAB
     render() { 
