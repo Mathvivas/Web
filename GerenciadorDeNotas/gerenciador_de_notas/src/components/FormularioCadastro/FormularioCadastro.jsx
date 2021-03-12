@@ -3,7 +3,7 @@ import "./style.css";
 
 export class FormularioCadastro extends Component {
 
-  // Parra que o Formulario possa receber uma propriedade, é necessário o props
+  // Para que o Formulario possa receber uma propriedade, é necessário o props
   constructor(props) {
     super(props);
     this.titulo = "";   // Inicialização

@@ -8,17 +8,33 @@ class App extends Component {
 
   constructor() {
     super();
-    this.notas = [];
+    this.state = {
+      notas: []
+    };
   }
 
   criarNota(titulo, texto) {
+    const novaNota = { titulo, texto };   // Objeto com duas propriedades
+    const novoArrayNotas = [...this.state.notas, novaNota];
+    const novoEstado = { 
+      notas: novoArrayNotas
+     };
+    this.setState(novoEstado);
+  }
+
+  deletarNota(index) {
+    let arrayNotas = this.state.notas;
+    arrayNotas.splice(index, 1);
+    this.setState({ notas: arrayNotas });
   }
 
   render() {
     return (    // Retorna somente uma única estrutura
       <section className="conteudo">
-        <FormularioCadastro criarNota={ this.criarNota }/>
-        <ListaDeNotas notas={ this.notas }/>
+        <FormularioCadastro criarNota={ this.criarNota.bind(this) }/>
+        <ListaDeNotas 
+          apagarNotas={ this.deletarNota.bind(this) }
+          notas={ this.state.notas }/>
       </section>
     );
   }
