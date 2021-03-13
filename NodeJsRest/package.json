@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-rest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Matheus Vivas",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mathvivas/Web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mathvivas/Web/issues"
+  },
+  "homepage": "https://github.com/Mathvivas/Web#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"       
+  }
+}
