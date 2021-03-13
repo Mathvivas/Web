@@ -18,9 +18,10 @@
   "homepage": "https://github.com/Mathvivas/Web#readme",
   "description": "",
   "dependencies": {
+    "consign": "^0.1.6",
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"       
+    "nodemon": "^2.0.7"
   }
 }
