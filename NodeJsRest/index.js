@@ -10,8 +10,18 @@
 */
 
 const customExpress = require('./config/customExpress')
+const conexao = require('./infraestrutura/conexao')
 
-const app = customExpress()
+conexao.connect(erro => {
+  if ( erro ) { 
+    console.log(erro) 
+  
+  } else {
+    console.log('Conectado com sucesso')
 
-app.listen(6000, () => console.log('Servidor rodando na porta 6000.'))
+    const app = customExpress()
+
+    app.listen(6000, () => console.log('Servidor rodando na porta 6000.'))
+  }
+})
 
