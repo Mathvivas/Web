@@ -7,7 +7,6 @@ module.exports = app => {
         //console.log(req.body)   // Criar o Body no Postman
         const atendimento = req.body
 
-        Atendimento.adicionar(atendimento)
-        res.send('POST atendimento.')
+        Atendimento.adicionar(atendimento, res)
     })
 }
