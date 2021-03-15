@@ -39,7 +39,7 @@ class Atendimento {
                     res.status(400).json(erro)
 
                 } else {
-                    res.status(201).json(resultados)
+                    res.status(201).json(atendimento)
                 }
             })
         }
@@ -68,6 +68,35 @@ class Atendimento {
 
             } else {
                 res.status(200).json(atendimento)
+            }
+        })
+    }
+
+    alterar(id, valores, res) {
+        if ( valores.data ) {
+            valores.data = moment(valores.data, 'DD/MM/YYYY').format('YYYY-MM-DD HH:MM:SS')
+        }
+        const sql = 'UPDATE Atendimentos SET ? WHERE id=?'
+
+        conexao.query(sql, [valores, id], (erro, resultado) => {
+            if ( erro ) {
+                res.status(400).json(erro)
+
+            } else {
+                res.status(200).json({ ...valores, id })
+            }
+        })
+    }
+
+    deletar(id, res) {
+        const sql = 'DELETE FROM Atendimentos WHERE id=?'
+
+        conexao.query(sql, id, (erro, resultados) => {
+            if ( erro ) {
+                res.status(400).json(erro)
+
+            } else {
+                res.status(200).json({ id })
             }
         })
     }
