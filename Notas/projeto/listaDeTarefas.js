@@ -1,43 +1,69 @@
-const criarTarefa = (evento) => {
-    evento.preventDefault()     // Previne o form de enviar o dado (recarregar a página)
-    
-    const lista = document.querySelector('[data-list]')
-    const input = document.querySelector('[data-form-input]')
-    const valor = input.value
+( () => {       // código dentro de uma função anônima, só existe aqui dentro
 
-    const tarefa = document.createElement('li')
-    tarefa.classList.add('task')        // Adiciona uma classe ao elemento
+    const criarTarefa = (evento) => {
+        evento.preventDefault()     // Previne o form de enviar o dado (recarregar a página)
+        
+        const lista = document.querySelector('[data-list]')
+        const input = document.querySelector('[data-form-input]')
+        const valor = input.value
 
-    const conteudo = `<p class="content">${valor}</p>`
+        const tarefa = document.createElement('li')
+        tarefa.classList.add('task')        // Adiciona uma classe ao elemento
 
-    tarefa.innerHTML = conteudo
-    tarefa.appendChild(botaoConcluir())
+        const conteudo = `<p class="content">${valor}</p>`
 
-    lista.appendChild(tarefa)
+        tarefa.innerHTML = conteudo
+        tarefa.appendChild(botaoConcluir())
+        tarefa.appendChild(BotaoDeletar())
 
-    input.value = " "
-}
+        lista.appendChild(tarefa)
 
-// seleciona a tag que possui esse data-attribute (data-form-button)
-const novaTarefa = document.querySelector('[data-form-button]')
+        input.value = " "
+    }
 
-novaTarefa.addEventListener('click', criarTarefa)
+    // seleciona a tag que possui esse data-attribute (data-form-button)
+    const novaTarefa = document.querySelector('[data-form-button]')
 
-const botaoConcluir = () => {
-    const conclui = document.createElement('button')
+    novaTarefa.addEventListener('click', criarTarefa)
 
-    conclui.classList.add('check-button')
-    conclui.innerText = "Concluir"
+    // Componenente --- Letra Maiúscula
+    const BotaoConcluir = () => {
+        const botaoConclui = document.createElement('button')
 
-    conclui.addEventListener('click', concluirTarefa)
+        botaoConclui.classList.add('check-button')
+        botaoConclui.innerText = "Concluir"
 
-    return conclui
-}
+        botaoConclui.addEventListener('click', concluirTarefa)
 
-const concluirTarefa = (evento) => {
-    const botao = evento.target
+        return conclui
+    }
 
-    const tarefaCompleta = botao.parentElement      // Pega o pai do botão (li)
+    const concluirTarefa = (evento) => {
+        const botao = evento.target
 
-    tarefaCompleta.classList.toggle('done')         // Ativa a classe done
-}
+        const tarefaCompleta = botao.parentElement      // Pega o pai do botão (li)
+
+        tarefaCompleta.classList.toggle('done')         // Ativa a classe done
+    }
+
+    // Componenente --- Letra Maiúscula
+    const BotaoDeletar = () => {
+        const btnDeleta = document.createElement('button')
+
+        btnDeleta.innerText = 'Deletar'
+        btnDeleta.addEventListener('click', deletarTarefa)
+
+        return btnDeleta
+    }
+
+    const deletarTarefa = (evento) => {
+        const btnDeleta = evento.target
+        
+        const tarefaCompleta = btnDeleta.parentElement
+
+        tarefaCompleta.remove()
+
+        return btnDeleta
+    }
+
+})()
