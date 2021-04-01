@@ -15,10 +15,12 @@ export const handleNovoItem = (evento) => {
     const data = moment(calendario.value)
 
     const dataFormatada = data.format('DD/MM/YYYY')
+    const concluida = false
 
     const dados = {
         valor, 
-        dataFormatada
+        dataFormatada,
+        concluida
     }
 
     const tarefasAtualizadas = [...tarefas, dados]      // Pega as tarefas e os dados
@@ -32,15 +34,19 @@ export const handleNovoItem = (evento) => {
     carregarTarefa()
 }
 
-export const Tarefa = ({ valor, dataFormatada }) => {
+export const Tarefa = ({ valor, dataFormatada, concluida }, id) => {
     
     const tarefa = document.createElement('li')
     tarefa.classList.add('task')        // Adiciona uma classe ao elemento
 
     const conteudo = `<p class="content">${dataFormatada} - ${valor}</p>`
 
+    if ( concluida ) {
+        tarefa.classList.add('done')
+    }
+
     tarefa.innerHTML = conteudo
-    tarefa.appendChild(BotaoConcluir())
+    tarefa.appendChild(BotaoConcluir(carregarTarefa, id))
     tarefa.appendChild(BotaoDeletar())
 
     return tarefa    

@@ -1,21 +1,24 @@
 // Componenente --- Letra Maiúscula
-const BotaoConcluir = () => {
+const BotaoConcluir = (atualiza, id) => {
     const botaoConclui = document.createElement('button')
 
     botaoConclui.classList.add('check-button')
     botaoConclui.innerText = "Concluir"
 
-    botaoConclui.addEventListener('click', concluirTarefa)
+    botaoConclui.addEventListener('click', () => concluirTarefa(atualiza, id))
 
     return botaoConclui
 }
 
-const concluirTarefa = (evento) => {
-    const botaoConclui = evento.target
+const concluirTarefa = (atualiza, id) => {
+    const tarefasCadastradas = JSON.parse(localStorage.getItem('tarefas'))
 
-    const tarefaCompleta = botaoConclui.parentElement      // Pega o pai do botão (li)
+    // Ao clicar no botão, inverte o valor
+    tarefasCadastradas[id].concluida = !tarefasCadastradas[id].concluida
 
-    tarefaCompleta.classList.toggle('done')         // Ativa a classe done
+    localStorage.setItem('tarefas', JSON.stringify(tarefasCadastradas))
+
+    atualiza()
 }
 
 export default BotaoConcluir
