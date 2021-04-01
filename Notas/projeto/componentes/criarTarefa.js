@@ -47,7 +47,7 @@ export const Tarefa = ({ valor, dataFormatada, concluida }, id) => {
 
     tarefa.innerHTML = conteudo
     tarefa.appendChild(BotaoConcluir(carregarTarefa, id))
-    tarefa.appendChild(BotaoDeletar())
+    tarefa.appendChild(BotaoDeletar(carregarTarefa, id))
 
     return tarefa    
 }
