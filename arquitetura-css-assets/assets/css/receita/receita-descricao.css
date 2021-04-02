@@ -1,0 +1,12 @@
+.receita-descricao {
+    font-size: 1.1875rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+@media screen and (max-width: 900px) {
+    .receita-descricao {
+        font-size: 1rem;
+        line-height: 1;
+    }
+}

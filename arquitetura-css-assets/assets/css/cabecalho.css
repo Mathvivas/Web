@@ -6,3 +6,10 @@
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+    .cabecalho {
+        justify-content: space-between;
+        padding: 0 5rem;
+    }
+}

@@ -1,0 +1,12 @@
+.banner-imagem {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .banner-imagem {
+        height: calc(100vh - 51px);
+    }
+}
