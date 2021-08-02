@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { ListaDeNotas } from "./components/ListaDeNotas/ListaDeNotas";
+import { FormularioCadastro } from './components/FormularioCadastro/FormularioCadastro';
+import { ListaDeCategorias } from './components/ListaDeCategorias/ListaDeCategorias';
+
 import './assets/App.css';
 import './assets/index.css';
-import { FormularioCadastro } from './components/FormularioCadastro/FormularioCadastro';
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      notas: []
+      notas: [],
+	  categorias: [],
     };
   }
 
@@ -28,16 +31,36 @@ class App extends Component {
     this.setState({ notas: arrayNotas });
   }
 
+  adicionarCategoria(nomeCategoria) {
+	  const novoArrayCategorias = [...this.state.categorias, nomeCategoria];
+	  const novoEstado = {...this.state, categorias:novoArrayCategorias};
+	  this.setState(novoEstado);
+  }
+
   render() {
     return (    // Retorna somente uma única estrutura
       <section className="conteudo">
         <FormularioCadastro criarNota={ this.criarNota.bind(this) }/>
-        <ListaDeNotas 
-          apagarNotas={ this.deletarNota.bind(this) }
-          notas={ this.state.notas }/>
+        <main className="conteudo-principal">
+			<ListaDeCategorias 
+				adicionarCategoria={ this.adicionarCategoria.bind(this) } 
+				categorias={ this.state.categorias }
+			/>
+        	<ListaDeNotas 
+            	apagarNota={ this.deletarNota.bind(this) }
+            	notas={ this.state.notas }
+			/>
+        </main>
       </section>
     );
   }
 }
+
+/*
+	Props são propriedades que passamos de um componente para outro quando o componente 
+	filho precisa de uma informação que o componente pai possui.
+
+	Já o state é uma forma de salvar informações que serão observadas pelo Virtual Dom.
+*/
 
 export default App;
