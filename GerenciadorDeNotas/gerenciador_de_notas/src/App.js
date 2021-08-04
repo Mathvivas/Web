@@ -18,17 +18,17 @@ class App extends Component {
 		return (    // Retorna somente uma única estrutura
 			<section className="conteudo">
 				<FormularioCadastro
-					categorias={this.categorias.categorias}
-					criarNota={this.notas.criarNota}
+					categorias={this.categorias}
+					criarNota={this.notas.criarNota.bind(this.notas)}
 				/>
 				<main className="conteudo-principal">
 					<ListaDeCategorias
-						adicionarCategoria={this.categoria.adicionarCategoria}
-						categorias={this.categorias.categorias}
+						adicionarCategoria={this.categoria.adicionarCategoria.bind(this.categorias)}
+						categorias={this.categorias}
 					/>
 					<ListaDeNotas
 						apagarNota={this.notas.apagarNota}
-						notas={this.notas.notas}
+						notas={this.notas}
 					/>
 				</main>
 			</section>
