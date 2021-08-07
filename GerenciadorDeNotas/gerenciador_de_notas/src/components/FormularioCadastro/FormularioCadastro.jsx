@@ -16,6 +16,10 @@ export class FormularioCadastro extends Component {
     this.props.categorias.inscrever(this._novasCategorias.bind(this));
   }
 
+  componentWillUnmount() {
+    this.props.categorias.desinscrever(this._novasCategorias);
+  }
+
   _novasCategorias(categorias) {
     this.setState({ ...this.state, categorias });
   }
@@ -50,7 +54,7 @@ export class FormularioCadastro extends Component {
       >
         <select onChange={ this._handleMudancaCategoria.bind(this) } className="form-cadastro_input">
           <option>Sem Categoria</option>
-          {this.props.categorias.map((categoria, index) => {
+          {this.state.categorias.map((categoria, index) => {
             return <option key={index}>{categoria}</option>
           })}
         </select>

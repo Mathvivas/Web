@@ -5,6 +5,10 @@ export default class Categorias {
         this._inscritos = [];
     }
 
+    desinscrever(func) {
+        this._inscritos = this._inscritos.filter(f => f !== func);
+    }
+
     inscrever(func) {
         this._inscritos.push(func);
     }

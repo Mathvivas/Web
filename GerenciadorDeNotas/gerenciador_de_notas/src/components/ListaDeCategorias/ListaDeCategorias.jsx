@@ -6,14 +6,24 @@ export class ListaDeCategorias extends Component {
     constructor() {
         super();
         this.state = { categorias: [] };
+        this._novasCategorias = this._novasCategorias.bind(this);
     }
     
+    /*
+        Esse método é chamado assim que o componente é criado e está pronto, 
+        é dentro desse método que devemos iniciar chamadas para API ou executar 
+        código que tem efeito colateral.
+    */
     componentDidMount() {
-        this.props.categorias.inscrever(this._novasCategorias.bind(this));
+        this.props.categorias.inscrever(this._novasCategorias);
+    }
+
+    componentWillUnmount() {
+        this.props.categorias.desinscrever(this._novasCategorias);
     }
 
     _novasCategorias(categorias) {
-        this.setState(...this.state, categorias);
+        this.setState({ ...this.state, categorias });
     }
 
     _handleEventoInput(evento) {
