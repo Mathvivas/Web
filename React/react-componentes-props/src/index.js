@@ -2,8 +2,22 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'       // react bootstrap
 import '@fortawesome/fontawesome-free/css/all.css'  // react font awesome
+import Cartao from './Cartao'
+import Pedido from './Pedido'
+import Feedback from './Feedback'
 
 export const App = () => {
+    const funcaoOK = () => alert("Obrigado pelo feedback")
+    const funcaoNOK = () => alert("Vamos verificar")
+    const textoOK = "Recebi"
+    const textoNOK = "Ainda não recebi"
+    const feedbackJSX = <Feedback 
+                            textoOK={textoOK}
+                            textoNOK={textoNOK}
+                            funcaoOK={funcaoOK}
+                            funcaoNOK={funcaoNOK}
+                        />
+
     return (
         <div className="container border rounded mt-2">
 
@@ -19,6 +33,7 @@ export const App = () => {
                             icone="fas fa-hdd fa-2x" 
                             titulo="SSD" 
                             descricao="SDD Kingston A400 - SATA"/>
+                        {feedbackJSX}
                     </Cartao>
                 </div>
             </div>
@@ -31,6 +46,7 @@ export const App = () => {
                             icone="fas fa-book fa-2x" 
                             titulo="Livro" 
                             descricao="Concrete Mathematics - Donald Knuth"/>
+                        {feedbackJSX}
                     </Cartao>
                 </div>
             </div>
@@ -43,6 +59,7 @@ export const App = () => {
                             icone="fas fa-laptop fa-2x" 
                             titulo="Notebook" 
                             descricao="Notebook Dell - 8Gb - i7"/>
+                        {feedbackJSX}
                     </Cartao>
                 </div>
             </div>
