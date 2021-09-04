@@ -96,7 +96,7 @@ class App extends React.Component {
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         {
-                            (!this.state.lat && !this.mensagemErro) ?
+                            (!this.state.lat && !this.state.mensagemErro) ?
                             <Loading mensagem="Por favor, responda à solicitação de localização"/>
                             :
                             this.state.mensagemErro ?
