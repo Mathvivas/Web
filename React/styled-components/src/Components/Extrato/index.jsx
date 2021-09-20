@@ -3,13 +3,13 @@ import { Box, Botao } from '../../Components/UI'
 import { extratoLista } from '../../info'
 import Items from '../Items'
 
-export const Extrato = () => {
+const Extrato = () => {
     return (
         <Box>
             {
                 extratoLista.updates.map(({id, type, from, value, date}) => {
                     return (
-                        <Items key={id} type={type} from={from} value={value} date={data} />
+                        <Items key={id} type={type} from={from} value={value} date={date} />
                     )
                 })
             }
@@ -17,3 +17,5 @@ export const Extrato = () => {
         </Box>
     )
 }
+
+export default Extrato
