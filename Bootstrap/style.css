@@ -3,28 +3,28 @@ body {
 }
 
 .navbar {
-  background-color: #f2ff00;
+  background-color: #00c9ff;
 }
 
 .quem-somos {
-  background-color: rgb(5, 255, 233);
+  background-color: rgb(5, 200, 250);
 }
 
 .margin {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .navbar-nav {
-  margin-left: 90px;
+  margin-left: 80px;
 }
 
 .navbar {
-  padding-left: 90px;
+  padding-left: 80px;
 }
 
 .parceiros {
-  background-color: #00c9ff;
+  background-color: #f2ff00;
 }
 
 .servicos {
